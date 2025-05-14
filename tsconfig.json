@@ -1,0 +1,1 @@
+jsonc\n{\n \"compilerOptions\": {\n \"target\": \"es2020\",\n \"module\": \"esnext\",\n \"jsx\": \"react-jsx\", // ★ ここが重要\n \"moduleResolution\": \"node\",\n \"lib\": [\"dom\", \"dom.iterable\", \"esnext\"],\n \"strict\": true,\n \"esModuleInterop\": true,\n \"resolveJsonModule\": true,\n \"types\": [\"@types/node\", \"@types/react\"]\n },\n \"include\": [\"api/**/*\"]\n}\n
