@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>今日のお題ボット</title>
+    <!-- TODO: Add OGP tags when you set a domain -->
+    <style>
+        body {
+            font-family: system-ui, sans-serif;
+            margin: 0;
+            padding: 2rem;
+            background: #f9fafb;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        #result {
+            font-size: 2rem;
+            margin: 1.5rem 0;
+            text-align: center;
+            min-height: 3.5rem;
+        }
+
+        button {
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            background: #4f46e5;
+            color: #fff;
+            cursor: pointer;
+            transition: opacity 0.2s ease;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        footer {
+            margin-top: 3rem;
+            font-size: 0.8rem;
+            text-align: center;
+            color: #777;
+        }
+    </style>
+    <meta property="og:image"
+        content="https://あなたのドメイン/api/og?t=%E4%BB%8A%E6%97%A5%E3%81%AE%E3%81%8A%E9%A1%8C%E3%83%9C%E3%83%83%E3%83%88" />
+</head>
+
+<body>
+    <header>
+        <h1>💡 今日のお題ボット</h1>
+        <p>クリックするだけでアイスブレイクや雑談のお題を提案します。</p>
+    </header>
+
+    <main>
+        <div id="result">ボタンを押してお題を表示</div>
+        <div style="text-align:center">
+            <button id="btn">お題を出す！</button>
+        </div>
+
+        <!-- AdSense placeholder -->
+        <div style="margin-top:2rem; text-align:center">
+            <!-- Replace with your AdSense code after approval -->
+            <!--
+      <ins class="adsbygoogle"
+           style="display:block"
+           data-ad-client="ca-pub-XXXXXXXXXXXX"
+           data-ad-slot="YYYYYYYYYY"
+           data-ad-format="auto"
+           data-full-width-responsive="true"></ins>
+      <script>
+        (adsbygoogle = window.adsbygoogle || []).push({});
+      </script>
+      -->
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 今日のお題ボット</p>
+    </footer>
+
+    <script>
+        // お題リスト（どんどん追加してください）
+        const topics = [
+            "最近ハマっている小さな習慣は？",
+            "子どもの頃の夢は何でしたか？",
+            "好きな漫画の一コマを語って！",
+            "今週末にやりたいことは？",
+            "もし透明人間になれたら最初にすることは？",
+            "自分だけが知っている地元の穴場スポットは？",
+            "最近聞いて衝撃を受けた雑学は？",
+            "今、机の上にある一番面白いものは何？",
+            "あと1時間で10万円使わなきゃいけないとしたら？",
+            "過去に戻って一つだけ助言するなら？"
+        ];
+
+        function pickRandom(arr) {
+            return arr[Math.floor(Math.random() * arr.length)];
+        }
+
+        const resultEl = document.getElementById('result');
+        document.getElementById('btn').addEventListener('click', () => {
+            resultEl.textContent = pickRandom(topics);
+        });
+    </script>
+</body>
+
+</html>
